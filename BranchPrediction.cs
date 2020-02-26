@@ -1,9 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace simd_workshop
 {
@@ -12,7 +8,7 @@ namespace simd_workshop
         private int[] _sorted = new int[32768];
         private int[] _unsorted = new int[32768];
 
-        [Setup]
+        [GlobalSetup]
         public void Setup()
         {
             var random = new Random(42);

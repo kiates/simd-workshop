@@ -1,9 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace simd_workshop
 {
@@ -13,7 +9,7 @@ namespace simd_workshop
         private const int ITERATIONS = 10;
         private const int PARTICLES = 100;
 
-        [Setup]
+        [GlobalSetup]
         public void Setup()
         {
             var rand = new Random(42);

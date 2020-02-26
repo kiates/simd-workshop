@@ -1,11 +1,7 @@
 ﻿using BenchmarkDotNet.Attributes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace simd_workshop
 {
@@ -19,7 +15,7 @@ namespace simd_workshop
         private short[] _set2;
         private short[] _output;
 
-        [Setup]
+        [GlobalSetup]
         public void Setup()
         {
             var random = new Random(42);

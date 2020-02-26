@@ -1,13 +1,11 @@
 ﻿using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Jobs;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace simd_workshop
 {
+   [SimpleJob(RuntimeMoniker.Net461, baseline: true)]
     public class SimpleVectors
     {
         private const int MATRIX_SHAPE = 512;
@@ -19,7 +17,7 @@ namespace simd_workshop
         private readonly float[] ys = new float[4096];
         private readonly float[] zs = new float[4096];
 
-        [Setup]
+        [GlobalSetup]
         public void Setup()
         {
             var rand = new Random(42);

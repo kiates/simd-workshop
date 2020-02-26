@@ -1,10 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace simd_workshop
 {
@@ -15,7 +10,7 @@ namespace simd_workshop
         private float[] _image = new float[ROWS * COLS];
         private float[] _rotated = new float[ROWS * COLS];
 
-        [Setup]
+        [GlobalSetup]
         public void Setup()
         {
             var random = new Random(42);
